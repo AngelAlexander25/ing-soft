@@ -6,30 +6,34 @@ body {
 
 /* Encabezado y navegación */
 header {
-  background-color: #00ABE4 ;
-  color: #fff;
-  padding: 10px;
-}
-.logo-container {
-  margin-left: auto; /* Empuja el contenedor del logo hacia la derecha */
-}
-
-.logo {
-  max-width: 50px; /* Establece el ancho máximo del logo */
-  max-height: 30px; /* Establece la altura máxima del logo */
-  /* Puedes ajustar estos valores según sea necesario */
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  justify-content: flex-end;
+  background: none;
+  color: #fff;
+  justify-content: space-between;
+  min-height: 125px;
+  align-items: center;
+  position: relative;
+  z-index: 1; /* Añadir una posición z para que el encabezado se sitúe por encima del video */
 }
 
-nav ul li {
-  margin-left: 20px;
+.nav-logo {
+  height: 115px;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-link {
+  font-weight: 600;
+  padding-right: 60px;
+}
+
+.nav-link:hover {
+  color: #c1bfbf;
+  font-size: 17px;
 }
 
 /* Sección principal */
@@ -42,6 +46,8 @@ nav ul li {
   align-items: center;
   color: #fff;
   text-align: center;
+  overflow: hidden; /* Para recortar el video dentro de la sección sin que se desborde */
+  z-index: 0; /* Establecer una posición z por debajo del encabezado */
 }
 
 #bg-video {
@@ -51,7 +57,6 @@ nav ul li {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
 }
 
 .content {
@@ -89,4 +94,21 @@ footer {
   color: #fff;
   margin: 0 10px;
   font-size: 24px;
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    padding: 10px 0px;
+  }
+}
+
+/* Establecer altura del video para que ocupe todo el encabezado */
+.hero-section video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
