@@ -5,15 +5,22 @@ body {
 }
 
 /* Encabezado y navegación */
-header {
+.bar {
   display: flex;
   background: transparent;
-  color: #fff;
   justify-content: space-between;
   min-height: 125px;
   align-items: center;
   position: relative;
   z-index: 1; /* Añadir una posición z para que el encabezado se sitúe por encima del video */
+  position: fixed;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  border-radius: 0 0 10px 10px;
+}
+
+.bar-scrolled {
+  background-color: #7b572b; /* Cambia este color al color que deseas */
 }
 
 .nav-logo {
@@ -26,11 +33,13 @@ header {
   padding-right: 60px;
   text-decoration: none;
   color: #fff;
+  transition: all 300ms;
+  margin-right: 20px;
 }
 
 .nav-link:hover {
-  color: #c1bfbf;
-  font-size: 17px;
+  text-shadow: #ccc 1px 1px 5px;
+  transform: scale(1.2, 1.2);
 }
 
 /* Sección principal */
