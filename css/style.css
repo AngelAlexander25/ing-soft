@@ -20,7 +20,7 @@ body {
 }
 
 .bar-scrolled {
-  background-color: #7b572b; /* Cambia este color al color que deseas */
+  background-color: #3c2fa2; /* Cambia este color al color que deseas */
 }
 
 .nav-logo {
@@ -157,6 +157,9 @@ body {
 
 .pie-pagina .gp1 .social-icons a:hover {
   color: aquamarine;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
 }
 
 .pie-pagina .gp2 {
