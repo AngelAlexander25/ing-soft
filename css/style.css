@@ -1,9 +1,35 @@
 /* Estilos generales */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,400,400i,700,700i,900,900i");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+:root {
+  --font-family-sans-serif: "Raleway", sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
 /* Encabezado y navegación */
 .bar {
   display: flex;
@@ -20,7 +46,7 @@ body {
 }
 
 .bar-scrolled {
-  background-color: #3c2fa2; /* Cambia este color al color que deseas */
+  background-color: #d2d2d2; /* Cambia este color al color que deseas */
 }
 
 .nav-logo {
@@ -28,22 +54,26 @@ body {
   display: flex;
 }
 
-.nav-link {
+.ico .nav-link {
   font-weight: 600;
   padding-right: 60px;
   text-decoration: none;
   color: #fff;
   transition: all 300ms;
   margin-right: 20px;
+  border: 1px solid transparent;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
 }
 
-.nav-link:hover {
-  text-shadow: #ccc 1px 1px 5px;
+.ico .nav-link:hover,
+.ico .nav-link:focus {
+  text-shadow: #767676 1px 1px 5px;
   transform: scale(1.2, 1.2);
 }
 
 /* Sección principal */
-.hero-section {
+.hero {
   position: relative;
   height: 80vh;
   display: flex;
@@ -56,7 +86,7 @@ body {
   z-index: 0; /* Establecer una posición z por debajo del encabezado */
 }
 
-#bg-video {
+.video #bg-video {
   position: absolute;
   top: 0;
   left: 0;
@@ -69,37 +99,24 @@ body {
   z-index: 1;
 }
 
-.hero-section h1 {
+.hero .content h1 {
   font-size: 48px;
   margin-bottom: 20px;
+  font-family: "Alfa Slab One", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.hero-section h2 {
+.hero h2 {
   font-size: 24px;
   margin-bottom: 40px;
 }
 
-/* Establecer altura del video para que ocupe todo el encabezado */
-.hero-section video {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.cta-btn {
-  background-color: #ff6347;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
 .gp2 {
-  background-color: #a5a3a3;
+  background-color: #ffffff;
   padding: 25px 10px;
   text-align: center;
-  color: #fff;
+  color: #000000;
 }
 
 /* Pie de página */
@@ -188,4 +205,9 @@ body {
     grid-gap: 30px;
     padding: 35px 0px;
   }
+}
+
+/* Hero Carousel */
+#template-mo-zay-hero-carousel {
+  background: #efefef !important;
 }
