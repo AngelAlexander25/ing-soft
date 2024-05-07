@@ -75,7 +75,7 @@ p {
 /* Sección principal */
 .hero {
   position: relative;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -100,7 +100,7 @@ p {
 }
 
 .hero .content h1 {
-  font-size: 48px;
+  font-size: 88px;
   margin-bottom: 20px;
   font-family: "Alfa Slab One", serif;
   font-weight: 400;
