@@ -46,7 +46,9 @@ p {
 }
 
 .bar-scrolled {
-  background-color: #d2d2d2; /* Cambia este color al color que deseas */
+  background-color: #183661; /* Cambia este color al color que desees #183661 o #3f556e*/
+  min-height: 90px; /* Ajusta este valor según sea necesario */
+  transition: 0.4s;
 }
 
 .nav-logo {
@@ -148,7 +150,7 @@ p {
 }
 
 .pie-pagina .gp1 .box h2 {
-  color: #fff;
+  color: #f2c119; /*#f2c119 o #fff*/
   margin-bottom: 25px;
   font-size: 20px;
 }

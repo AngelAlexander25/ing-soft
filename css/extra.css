@@ -30,36 +30,29 @@ h6 {
 
 /** project section **/
 
-.project {
+.productos {
   background: url(../images/product_bg.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  padding: 90px 0 90px 0;
+  padding: 90px 60px 90px 60px;
 }
 
-.project .titlepage {
+.productos .tituloproducto {
   text-align: left;
 }
 
-.project .titlepage h2 {
+.productos .tituloproducto h2 {
   margin-bottom: 40px;
   padding-bottom: 10px;
-  border-bottom: #f2c119 solid 5px;
+  border-bottom: #f2c119 solid 8px;
 }
 
-.project .titlepage p {
-  font-size: 17px;
-  line-height: 30px;
-  font-weight: 400;
-  padding-top: 10px;
-  color: #fff;
-}
-.product_main {
+.producto_main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.project .project_box {
+.productos .proyecto_box {
   text-align: center;
   max-width: 17.3%;
   margin: 0 15px 20px 15px;
@@ -74,7 +67,7 @@ h6 {
   justify-content: center;
 }
 
-.project .project_box h3 {
+.proyecto .proyecto_box h3 {
   color: #1c1c1b;
   font-size: 15px;
   line-height: 20px;
@@ -82,17 +75,21 @@ h6 {
   text-align: left;
 }
 
-.project .read_more {
-  margin-top: 50px !important;
-  margin: 0 auto;
-  display: block;
-  text-transform: none;
-  color: #fff;
-  background: #183661;
-  padding: 10px 0;
+/* Estilos para el botón de "Leer más" en el producto principal */
+.producto_main .read_more {
+  margin-top: 50px !important; /* Ajusta el margen superior según sea necesario */
+  display: block; /* Hace que el botón sea un elemento de bloque */
+  text-transform: none; /* Elimina la transformación de texto (si la hubiera) */
+  color: #fff; /* Color del texto */
+  background: #183661; /* Color de fondo del botón */
+  padding: 15px; /* Espacio interno del botón */
+  text-decoration: none; /* Elimina el subrayado del texto */
+  border-radius: 35px; /* Radio de borde para hacer el botón redondeado */
+  width: 100px; /* Ajusta el ancho del botón según sea necesario */
+  text-align: center;
 }
 
-.project .read_more:hover {
+.producto_main .read_more:hover {
   background-color: #f2c119;
 }
 
