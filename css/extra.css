@@ -54,8 +54,9 @@ h6 {
 }
 .productos .proyecto_box {
   text-align: center;
+  align-items: center;
   max-width: 17.3%;
-  margin: 0 15px 20px 15px;
+  margin: 10px 15px 20px 15px;
 }
 
 .dark_white_bg {
