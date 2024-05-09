@@ -1,12 +1,17 @@
 /* Estilos generales */
+
+/* Importación de fuentes */
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,400,400i,700,700i,900,900i");
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+
+/* Definición de variables */
 :root {
   --font-family-sans-serif: "Raleway", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 }
 
+/* Estilos para encabezados */
 h3,
 h4,
 h5,
@@ -15,28 +20,26 @@ h6 {
   font-weight: normal;
   position: relative;
   padding: 0 0 10px 0;
-  font-weight: normal;
   line-height: normal;
   color: #111111;
   margin: 0;
 }
 
+/* Tamaños de fuente para distintos encabezados */
 h3 {
   font-size: 18px;
 }
-
 h4 {
   font-size: 16px;
 }
-
 h5 {
   font-size: 14px;
 }
-
 h6 {
   font-size: 13px;
 }
 
+/* Estilos generales del documento */
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -46,7 +49,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-family-sans-serif);
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -59,6 +62,7 @@ p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
+
 /* Encabezado y navegación */
 .bar {
   display: flex;
@@ -66,17 +70,17 @@ p {
   justify-content: space-between;
   min-height: 125px;
   align-items: center;
-  position: relative;
-  z-index: 1; /* Añadir una posición z para que el encabezado se sitúe por encima del video */
-  position: fixed;
+  position: fixed; /* Establecer posición fija para la barra de navegación */
   width: 100%;
+  z-index: 1;
   transition: background-color 0.3s ease;
   border-radius: 0 0 10px 10px;
 }
 
+/* Cambios al hacer scroll en la barra */
 .bar-scrolled {
-  background-color: #183661; /* Cambia este color al color que desees #183661 o #3f556e*/
-  min-height: 90px; /* Ajusta este valor según sea necesario */
+  background-color: #183661;
+  min-height: 90px;
   transition: 0.4s;
 }
 
@@ -113,7 +117,7 @@ p {
   align-items: center;
   color: #fff;
   text-align: center;
-  overflow: hidden; /* Para recortar el video dentro de la sección sin que se desborde */
+  overflow: hidden; /* Recorta el video dentro de la sección sin desbordamiento */
   z-index: 0; /* Establecer una posición z por debajo del encabezado */
 }
 
@@ -124,6 +128,22 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.hero .video::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.314
+  ); /* Ajustar la opacidad según sea necesario */
+  z-index: 1;
 }
 
 .content {
@@ -149,15 +169,14 @@ p {
   text-align: center;
   color: #000000;
 }
-/* Fin de hero seccion la del video */
+/* Fin de sección principal */
 
-/** proyecto section **/
-
+/** Sección de productos **/
 .productos {
   background: url(../images/product_bg.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  padding: 90px 60px 90px 60px;
+  padding: 90px 60px;
 }
 
 .productos .tituloproducto {
@@ -175,15 +194,21 @@ p {
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .productos .proyecto_box {
   text-align: center;
   align-items: center;
   max-width: 17.3%;
   margin: 25px 15px 20px 15px;
+  flex: 1 1 20%; /* Flexbox para asegurar el mismo tamaño para todos los elementos */
 }
 
 .dark_white_bg {
-  background: #f2f2f2;
+  background: linear-gradient(
+    to bottom,
+    #acadac,
+    #cdcdcd
+  ); /* Agregar degradado */
   height: 257px;
   display: flex;
   flex-wrap: wrap;
@@ -191,7 +216,7 @@ p {
   justify-content: center;
 }
 
-.proyecto_box h3 {
+.productos .proyecto_box h3 {
   /* Estilos para los elementos <h3> dentro de elementos con clase "proyecto_box" */
   color: #1c1c1b; /* Color de texto */
   font-size: 15px; /* Tamaño de fuente */
@@ -199,30 +224,53 @@ p {
   padding: 22px 10px 10px 10px; /* Relleno (arriba, derecha, abajo, izquierda) */
   text-align: center; /* Alineación de texto */
 }
-/* Estilos para el botón de "Leer más" en el producto principal */
+
+.productos .proyecto_box img {
+  max-width: 100%; /* Ajusta el ancho máximo de la imagen */
+  height: auto; /* Permite que la altura se ajuste automáticamente */
+}
+
+/* Estilos para el botón "Leer más" en el producto principal */
 .producto_main .read_more {
-  margin-top: 50px !important; /* Ajusta el margen superior según sea necesario */
-  display: block; /* Hace que el botón sea un elemento de bloque */
+  margin-top: 20px !important; /* Ajusta el margen superior según sea necesario */
+  display: inline-block; /* Hace que el botón sea un elemento de bloque */
   text-transform: none; /* Elimina la transformación de texto (si la hubiera) */
   color: #fff; /* Color del texto */
   background: #183661; /* Color de fondo del botón */
-  padding: 15px; /* Espacio interno del botón */
+  padding: 10px 20px; /* Espacio interno del botón */
   text-decoration: none; /* Elimina el subrayado del texto */
   border-radius: 35px; /* Radio de borde para hacer el botón redondeado */
-  width: 100px; /* Ajusta el ancho del botón según sea necesario */
   text-align: center;
+  transition: all 0.4s ease; /* Transición suave para el cambio de tamaño */
 }
 
 .producto_main .read_more:hover {
   background-color: #f2c119;
+  transition: 0.4s ease;
+  color: #000000;
+  font-size: 19px;
+  text-align: center;
+  align-items: center;
 }
 
-/** fin de proyecto section **/
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .productos {
+    padding: 60px 30px;
+  } /* Reducción del relleno para dispositivos móviles */
+
+  .producto_main .proyecto_box {
+    max-width: 100%;
+  } /* Establece el ancho máximo al 100% para que se ajuste al ancho del dispositivo */
+}
+
+/** Fin de sección de productos **/
 
 /* Pie de página */
 .pie-pagina {
   background-color: #0a141d;
   width: 100%;
+  z-index: 9999;
 }
 
 .pie-pagina .gp1 {
@@ -248,7 +296,7 @@ p {
 }
 
 .pie-pagina .gp1 .box h2 {
-  color: #f2c119; /*#f2c119 o #fff*/
+  color: #f2c119;
   margin-bottom: 25px;
   font-size: 20px;
 }
@@ -261,9 +309,9 @@ p {
 .pie-pagina .gp1 .social-icons a {
   display: inline-block;
   text-decoration: none;
-  width: 55px;
-  height: 55px;
-  line-height: 55px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
   color: white;
   margin-right: 10px;
   background-color: #0d2033;
@@ -274,9 +322,9 @@ p {
 
 .pie-pagina .gp1 .social-icons a:hover {
   color: aquamarine;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
+  width: 65px;
+  height: 65px;
+  line-height: 65px;
 }
 
 .pie-pagina .gp2 {
@@ -294,17 +342,27 @@ p {
   header {
     flex-direction: column;
   }
-
   nav {
     padding: 10px 0px;
   }
+}
+
+@media (max-width: 768px) {
+  .hero .content h1 {
+    font-size: 48px;
+  } /* Ajusta el tamaño de fuente para dispositivos móviles */
+  .hero .content h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  } /* Ajusta el tamaño de fuente para dispositivos móviles */
 
   .pie-pagina .gp1 {
-    width: 90%;
-    grid-template-columns: repeat(3, -1fr);
-    grid-gap: 30px;
-    padding: 35px 0px;
-  }
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+  } /* Cambia a una sola columna en dispositivos móviles */
+  .pie-pagina .gp1 .box figure img {
+    width: 250px;
+  } /* Redimensiona las imágenes para adaptarse a dispositivos móviles */
 }
 
 /* Hero Carousel */

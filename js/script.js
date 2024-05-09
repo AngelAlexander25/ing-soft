@@ -1,3 +1,4 @@
+// Evento de desplazamiento de la ventana
 window.addEventListener("scroll", function () {
   var bar = document.querySelector(".bar");
   var scrolled = window.scrollY;
