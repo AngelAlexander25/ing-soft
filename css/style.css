@@ -73,7 +73,7 @@ p {
   position: fixed; /* Establecer posición fija para la barra de navegación */
   width: 100%;
   z-index: 1;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, min-height 0.35s ease; /* Agregar transición para la altura mínima */
   border-radius: 0 0 10px 10px;
 }
 
@@ -81,7 +81,6 @@ p {
 .bar-scrolled {
   background-color: #183661;
   min-height: 90px;
-  transition: 0.4s;
 }
 
 .nav-logo {
@@ -230,7 +229,7 @@ p {
   height: auto; /* Permite que la altura se ajuste automáticamente */
 }
 
-/* Estilos para el botón "Leer más" en el producto principal */
+/* Estilos para el botón "Ver más" en el producto principal */
 .producto_main .read_more {
   margin-top: 20px !important; /* Ajusta el margen superior según sea necesario */
   display: inline-block; /* Hace que el botón sea un elemento de bloque */
@@ -242,15 +241,16 @@ p {
   border-radius: 35px; /* Radio de borde para hacer el botón redondeado */
   text-align: center;
   transition: all 0.4s ease; /* Transición suave para el cambio de tamaño */
+  width: auto; /* Ajusta el ancho automáticamente */
+  min-width: 150px; /* Ancho mínimo del botón */
+  line-height: normal; /* Restablece la altura de línea */
 }
 
 .producto_main .read_more:hover {
   background-color: #f2c119;
-  transition: 0.4s ease;
   color: #000000;
-  font-size: 19px;
-  text-align: center;
-  align-items: center;
+  transform: scale(1.1); /* Aumentar el tamaño en un 10% */
+  font-weight: bold; /* Texto en negrita */
 }
 
 /* Estilos para dispositivos móviles */
@@ -271,6 +271,7 @@ p {
   background-color: #0a141d;
   width: 100%;
   z-index: 9999;
+  overflow: hidden; /* Evitar el desplazamiento al hacer hover */
 }
 
 .pie-pagina .gp1 {
@@ -317,14 +318,32 @@ p {
   background-color: #0d2033;
   text-align: center;
   border-radius: 50%;
-  transition: all 300ms ease;
+  transition: all 300ms ease; /* Agregar transición para el efecto */
 }
 
 .pie-pagina .gp1 .social-icons a:hover {
-  color: aquamarine;
-  width: 65px;
-  height: 65px;
-  line-height: 65px;
+  transform: scale(1.15); /* Aumentar el tamaño en un 15% */
+}
+
+.pie-pagina .gp1 .social-icons a:hover .fa-instagram {
+  color: #c13584; /* Color de Instagram al hacer hover */
+}
+
+.pie-pagina .gp1 .social-icons a:hover .fa-facebook {
+  color: #3b5998; /* Color de Facebook al hacer hover */
+}
+
+.pie-pagina .gp1 .social-icons a:hover .fa-twitter {
+  color: #1da1f2; /* Color de Twitter al hacer hover */
+}
+
+.pie-pagina .gp1 .social-icons a:hover .fa-whatsapp {
+  color: #25d366; /* Color de WhatsApp al hacer hover */
+}
+
+/* Anular la transición cuando no se pasa el puntero sobre un icono */
+.pie-pagina .gp1 .social-icons a:not(:hover) {
+  transition: none;
 }
 
 .pie-pagina .gp2 {
