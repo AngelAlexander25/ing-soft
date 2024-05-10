@@ -6,7 +6,7 @@ window.addEventListener("scroll", function () {
 
   if (scrolled > 0) {
     // Aumenta el tamaño de la barra cuando el usuario desplaza hacia abajo
-    bar.style.height = "50px"; // Puedes ajustar el valor según tus necesidades
+    bar.style.height = "120px"; // Puedes ajustar el valor según tus necesidades
     bar.classList.add("bar-scrolled");
 
     // Cambia el color de los enlaces
@@ -15,7 +15,7 @@ window.addEventListener("scroll", function () {
     });
   } else {
     // Restaura el tamaño original de la barra cuando el usuario está en la parte superior de la página
-    bar.style.height = "30px"; // Puedes ajustar el valor según tus necesidades
+    bar.style.height = "175px"; // Puedes ajustar el valor según tus necesidades
     bar.classList.remove("bar-scrolled");
 
     // Restaura el color original de los enlaces
@@ -23,4 +23,7 @@ window.addEventListener("scroll", function () {
       link.classList.remove("scrolled");
     });
   }
+
+  // Agregar una transición gradual a la altura de la barra
+  bar.style.transition = "height 0.7s ease"; // Puedes ajustar la duración de la transición según tus necesidades
 });
