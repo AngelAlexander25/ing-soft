@@ -1,5 +1,17 @@
 /* Estilos generales */
 
+/*   Paleta de colores
+
+#FFFFFF - Blanco (para el fondo)
+#000000 - Negro (para el texto principal)
+#183661 - Azul oscuro (color de fondo de la barra de navegación y botón "Ver más")
+#F2C119 - Amarillo (para los enlaces de navegación y el botón "Ver más" al hacer hover)
+#0A141D - Azul oscuro (para el fondo del pie de página)
+#C9C9C9 - Gris claro (para el fondo de la sección de productos)
+#F2C119 (variante más clara) - Amarillo (para el borde inferior del título de productos)
+
+*/
+
 /* Importación de fuentes */
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,400,400i,700,700i,900,900i");
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
@@ -21,7 +33,7 @@ h6 {
   position: relative;
   padding: 0 0 10px 0;
   line-height: normal;
-  color: #111111;
+  color: #000;
   margin: 0;
 }
 
@@ -95,6 +107,12 @@ p {
   color: #c5c5c5; /* Cambia el color de los enlaces cuando la barra se ha desplazado */
 }
 
+.bar-scrolled .ico .nav-link.scrolled:hover {
+  color: #ffffff; /* Cambia el color de los enlaces cuando la barra se ha desplazado */
+  text-shadow: #ffffff 5px 5px 15px;
+  transform: scale(2, 2);
+}
+
 .ico .nav-link {
   font-weight: 600;
   padding-right: 60px;
@@ -109,8 +127,8 @@ p {
 
 .ico .nav-link:hover,
 .ico .nav-link:focus {
-  text-shadow: #cccccc 5px 5px 15px;
-  transform: scale(1.2, 1.2);
+  text-shadow: #f2c119 5px 5px 15px;
+  transform: scale(2, 2);
 }
 
 .ico .nav-link:hover,
@@ -213,10 +231,10 @@ p {
 }
 
 .gp2 {
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 25px 10px;
   text-align: center;
-  color: #000000;
+  color: #000;
 }
 
 .hero-image {
@@ -304,7 +322,7 @@ p {
 }
 
 .productos .proyecto_box h3 {
-  color: #1c1c1b;
+  color: #000;
   font-size: 15px;
   line-height: 20px;
   padding: 22px 10px 10px 10px;
@@ -375,8 +393,7 @@ p {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
 }
 
 .pie-pagina .gp1 .box figure img {
@@ -385,7 +402,7 @@ p {
 }
 
 .pie-pagina .gp1 .box figure img:hover {
-  transform: scale(1.1);
+  transform: scale(1.015);
 }
 
 .pie-pagina .gp1 .bar figure img:not(hover) {
@@ -539,12 +556,16 @@ p {
   width: auto;
   min-width: 150px;
   line-height: normal;
+  transition: all 0.4s ease;
+  margin-top: 20px !important;
+  display: inline-block;
 }
 
 .contact-form button[type="submit"]:hover {
   background-color: #f2c119;
   transform: scale(1.15);
   font-weight: bold;
+  color: #000000;
 }
 
 .mapa {
