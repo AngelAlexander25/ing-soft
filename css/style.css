@@ -624,3 +624,21 @@ p {
 }
 
 /*Fin Contacto section*/
+
+/*-----------------------Inicia estilos pruebas para los productos-----------------------------------*/
+.producto-detalle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.producto-detalle .imagen {
+  margin-right: 20px;
+}
+.producto-detalle img {
+  max-width: 100%;
+  height: auto;
+}
+.producto-detalle .detalles {
+  max-width: 400px;
+}
