@@ -1,7 +1,10 @@
-/* Importar la fuente de Google Fonts */
+/* Importación de fuentes */
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,400,400i,700,700i,900,900i");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -35,9 +38,11 @@ html, body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   width: auto; /* Esto permite que el ancho se ajuste al contenido */
   max-width: 480px; /* Incrementado de 360px para hacerlo más ancho */
+  z-index: 2;
 }
 
-.login__input, .login__submit {
+.login__input,
+.login__submit {
   width: 100%; /* Asegura que los inputs y botones llenen el contenedor */
   padding: 15px; /* Aumenta el padding para una mejor visualización */
   margin-bottom: 10px; /* Espacio entre los elementos del formulario */
@@ -64,7 +69,8 @@ a {
   margin-top: 10px;
 }
 
-.login__input, .login__submit {
+.login__input,
+.login__submit {
   width: 100%; /* Establece el ancho de los inputs y botón al 100% del contenedor */
   padding: 12px;
   border-radius: 5px;
@@ -96,4 +102,3 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
