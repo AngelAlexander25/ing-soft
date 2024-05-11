@@ -1,271 +1,99 @@
 /* Importar la fuente de Google Fonts */
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
 
-:root {
-  --color-primary: #5cb6f9;
-  --color-bg-form: #ffff;
-  --color-bg-button: #fff;
-  --color-border: #d4d3e8;
-  --color-text: #5cb6f9;
-  --color-text-secondary: #000000;
-  --color-bg-button-register: #fff;
-  --color-border-button-register: #5cb6f9;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  overflow: hidden; /* Previene el desbordamiento de cualquier elemento fuera del viewport */
 }
 
-/* Estilos generales */
-* {
-  box-sizing: border-box;
-  margin: 0px;
-  padding: 0;
-  font-family: Raleway, sans-serif; /* Establecer la fuente predeterminada */
-}
-body {
-  /* Establece la imagen de fondo */
-  background-image: url("recursos/sneakersbanner.jpg");
-  /* Ajusta otras propiedades según sea necesario */
-  background-size: 100% 100%; /* Para ajustar la imagen al tamaño del contenedor */
-  background-repeat: no-repeat; /* Para que la imagen no se repita */
+/* Estilos de video de fondo */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Establece el video detrás del contenido */
+  object-fit: cover; /* Asegura que el video cubra la pantalla sin distorsionar las proporciones */
 }
 
 /* Contenedor principal */
 .container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* Altura mínima del contenedor para ocupar toda la pantalla */
+  background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  width: auto; /* Esto permite que el ancho se ajuste al contenido */
+  max-width: 480px; /* Incrementado de 360px para hacerlo más ancho */
 }
 
-/* Pantalla de inicio de sesión */
-.screen {
-  background: linear-gradient(
-    120deg,
-    #5cb6f9,
-    #5cb6f9
-  ); /* Fondo con gradiente lineal */
-  position: relative;
-  height: 625px;
-  width: 480px;
-  box-shadow: 0px 0px 24px #000000; /* Sombra alrededor del contenedor */
+.login__input, .login__submit {
+  width: 100%; /* Asegura que los inputs y botones llenen el contenedor */
+  padding: 15px; /* Aumenta el padding para una mejor visualización */
+  margin-bottom: 10px; /* Espacio entre los elementos del formulario */
 }
 
-/* Contenido de la pantalla */
-.screen__content {
-  z-index: 1;
-  position: relative;
-  height: 90%;
-}
-
-/* Fondo del contenedor con formas curvas */
-.screen__background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-  -webkit-clip-path: inset(0 0 0 0);
-  clip-path: inset(0 0 0 0);
-}
-
-/* Formas curvas del fondo */
-.screen__background__shape {
-  transform: rotate(45deg);
-  position: absolute;
-}
-
-.screen__background__shape1 {
-  height: 584px;
-  width: 532px;
-  background: #ffff;
-  top: -50px;
-  right: 145px;
-  border-radius: 0 72px 0 0;
-  background-color: var(--color-bg-form);
-}
-
-.screen__background__shape2 {
-  height: 220px;
-  width: 220px;
-  background: #005187;
-  /* background: #050a30; */
-  top: -172px;
-  right: -10px;
-  border-radius: 32px;
-}
-
-.screen__background__shape3 {
-  height: 540px;
-  width: 190px;
-  background: linear-gradient(270deg, #f4f6fc, #cae8ff);
-  top: -4px;
-  right: 0;
-  border-radius: 32px;
-}
-
-.screen__background__shape4 {
-  height: 400px;
-  width: 200px;
-  background: #005187;
-  /* background: #050a30; */
-  top: 420px;
-  right: 37px;
-  border-radius: 60px;
-}
-
-/* Tamaño del formulario de inicio de sesión */
-.login {
-  width: 315px;
-  padding: 55px;
-  padding-top: 0px;
-}
-
-.login__field {
-  padding: 8px 0px;
-  position: relative;
-}
-
-/* Estilos de los campos de entrada */
-.login__input {
-  border: none;
-  border-bottom: 3px solid var(--color-border);
-  background: none;
-  padding: 10px 0px;
-  padding-left: 20px;
-  font-weight: 700;
-  width: 220px;
-  transition: 0.2s; /* Transición suave */
-}
-
-.login__input:active,
-.login__input:focus,
-.login__input:hover {
-  outline: none;
-  border-bottom: 5px solid #5cb6f9; /* Línea inferior en foco */
-  width: 230px; /* Ancho aumentado en foco */
-}
-
-/* Estilos del botón de inicio de sesión */
 .login__submit {
-  /* Utiliza el color de fondo del botón */
-  background-color: var(--color-bg-button);
-  /* Utiliza el color del texto */
-  color: var(--color-text);
-  font-size: 14px;
-  margin-top: 15px;
-  padding: 15px 20px;
-  border-radius: 40px;
-  border: 3px solid #d4d3e8;
-  text-transform: uppercase;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  width: 110%;
-  box-shadow: 0px 6px 6px #cae8ff;
   cursor: pointer;
-  transition: 0.2s;
+  transition: background-color 0.2s;
 }
 
-.login__submit:active,
-.login__submit:focus,
 .login__submit:hover {
-  border-color: #5cb6f9;
-  outline: none;
-  transition: 0.2s;
-  padding-left: 41%;
+  background-color: darken(var(--color-primary), 10%);
 }
 
-/* Estilos del botón de registro */
-.registrer__submit {
-  /* Utiliza el color de fondo del botón de registro */
-  background-color: var(--color-bg-button-register);
-  /* Utiliza el color del borde del botón de registro */
-  border: 3px solid var(--color-border-button-register);
-  font-size: 14px;
-  margin-top: 15px;
-  padding: 15px 20px;
-  border-radius: 40px;
-  text-transform: uppercase;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  width: 110%;
-  color: #5cb6f9;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.registrer__submit:active,
-.registrer__submit:focus,
-.registrer__submit:hover {
-  border-color: #5cb6f9;
-  outline: none;
-  transition: 0.2s;
-  box-shadow: 0px 6px 6px #cae8ff;
-  padding-left: 30%;
-  width: 110%;
-}
-
-/* Estilos de los enlaces */
 a {
-  display: inline-block;
-  color: var(--color-text);
-  background: #fff;
-  font-size: 14px;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 16px; /* Aumenta el tamaño del texto para enlaces */
+  padding: 10px 20px; /* Aumenta el padding para hacer el enlace más prominente */
+  margin-top: 20px; /* Aumenta el espacio sobre el enlace */
+}
+/* Estilos del formulario de login */
+.login__field {
   margin-top: 10px;
-  padding: 8px 20px;
-  border-radius: 40px;
-  border: 3px solid #d4d3e8;
-  text-transform: uppercase;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  width: 75%;
+}
+
+.login__input, .login__submit {
+  width: 100%; /* Establece el ancho de los inputs y botón al 100% del contenedor */
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.login__input {
+  border: 2px solid #ccc;
+  margin-bottom: 10px; /* Espacio entre los inputs y el botón */
+}
+
+.login__submit {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
   cursor: pointer;
-  transition: 0.2s;
+  transition: background-color 0.3s;
+}
+
+.login__submit:hover {
+  background-color: darken(var(--color-primary), 10%);
+}
+
+a {
+  margin-top: 15px;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
 a:hover {
-  border-color: #5cb6f9;
-  outline: none;
-  transition: 0.2s;
-  padding-left: 13%;
-  box-shadow: 0px 3px 5px #fefefe;
-  width: 80%;
+  text-decoration: underline;
 }
 
-/* Estilo del logotipo de EEVO SNEAKERS */
-img {
-  height: 235px;
-  width: 235px;
-  margin-top: 48px;
-}
-
-/* Texto de los derechos reservados */
-.derecho p {
-  padding-top: 100px;
-  font-family: Raleway, sans-serif;
-  color: white;
-  font-size: 12px;
-  padding-left: 190px;
-}
-
-/* Animaciones */
-@keyframes animate {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-    border-radius: 0;
-  }
-  100% {
-    transform: translateY(-1000px) rotate(720deg);
-    opacity: 0;
-    border-radius: 50%;
-  }
-}
-
-/* Estilo de las letras con borde */
-.texto-borde {
-  -webkit-text-stroke: 1px black;
-  color: white;
-}
