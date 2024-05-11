@@ -1,4 +1,4 @@
-import productos from "js/productos.js";
+import { productos } from "/js/productos.js";
 
 function cargarDetallesProducto(idProducto) {
   // Buscar el producto por su ID en el array de productos (ya está definido globalmente)
