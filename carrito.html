@@ -6,22 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Carrito de Compras - Eevo Sneakers</title>
         <link rel="stylesheet" href="css/car.css" />
-    
         <!-- Incluye Font Awesome a través de un CDN "ICONOS"-->
-        <script
-          src="https://kit.fontawesome.com/3057797fbd.js"
-          crossorigin="anonymous"
-        ></script>
-      </head>
+        <script src="https://kit.fontawesome.com/3057797fbd.js" crossorigin="anonymous"></script>
+        <!-- PayPal SDK -->
+        <script src="https://www.paypal.com/sdk/js?client-id=ARZ3K6KDXQ8QnnqKxn6A_pqrglNkcGb8_SJGEqxruiDRBgv4optFghKRmIKBMeVIG_O0PcR8RlEKx1oM&currency=USD"></script>
+    </head>
 <body>
     <header>
         <nav class="bar">
           <a href="index.html" class="logo-container">
-            <img
-              src="images/logo1-3.png"
-              alt="Eevo SNEAKERS"
-              class="nav-logo"
-            />
+            <img src="images/logo1-3.png" alt="Eevo SNEAKERS" class="nav-logo" />
           </a>
           <nav class="ico">
             <a href="index.html" class="nav-link inicio">Inicio</a>
@@ -37,7 +31,8 @@
         <h1>Carrito de Compras</h1>
         <div id="itemsCarrito"></div>
         <h3>Total: $<span id="totalCarrito"></span></h3>
-        <button onclick="realizarPago()">Pagar Ahora</button>
+        <!-- PayPal Button Container -->
+        <div id="paypal-button-container"></div>
     </main>
     
     <div class="carrito-vacio">
@@ -55,25 +50,15 @@
           </div>
           <div class="box">
             <h2>Sobre nosotros</h2>
-            <p>
-              Somos alumnos de la Universidad del Caribe realizando una práctica
-              con el fin de aprender y mejorar nuestras habilidades de desarrollo
-              y cooperación.
-            </p>
-            <p>
-              Estamos comprometidos en aplicar los conocimientos adquiridos en
-              nuestras clases y trabajar en equipo para llevar a cabo este
-              proyecto de manera exitosa.
-            </p>
-            <!-- Section "Politicas de privacidad" -->
+            <p>Somos alumnos de la Universidad del Caribe realizando una práctica con el fin de aprender y mejorar nuestras habilidades de desarrollo y cooperación.</p>
+            <p>Estamos comprometidos en aplicar los conocimientos adquiridos en nuestras clases y trabajar en equipo para llevar a cabo este proyecto de manera exitosa.</p>
             <div class="politicas">
               <a href="politica_privacidad.html">Política de Privacidad</a>
               <a href="terminos_servicio.html">Términos de Servicio</a>
             </div>
           </div>
-  
           <div class="box">
-            <h2>Siguenos</h2>
+            <h2>Síguenos</h2>
             <div class="social-icons">
               <a href="#"><i class="fa fa-instagram"></i></a>
               <a href="#"><i class="fa fa-facebook"></i></a>
@@ -83,13 +68,29 @@
           </div>
         </div>
         <div class="gp2">
-          <small
-            >&copy; 2024 <b>EEVO SNEAKERS</b> - Todos los derechos
-            reservados.</small
-          >
+          <small>&copy; 2024 <b>EEVO SNEAKERS</b> - Todos los derechos reservados.</small>
         </div>
       </footer>
       <script type="module" src="js/productos.js"></script>
-      <script type="module" src="js/agregarAlCarrito.js"></script>   
+      <script type="module" src="js/agregarAlCarrito.js"></script>
+      <script>
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '0.01' // Puedes cambiar esto para reflejar el monto a pagar
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Transacción completada por ' + details.payer.name.given_name);
+                    // Aquí puedes agregar lógica adicional para manejar la transacción completada.
+                });
+            }
+        }).render('#paypal-button-container');
+      </script>
 </body>
 </html>

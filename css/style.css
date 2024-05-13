@@ -644,21 +644,59 @@ p {
 }
 
 /* Estilo para botones azul marino con bordes redondeados */
-.button agregar-carrito-btn {
+/* Estilo base para botones de agregar al carrito */
+.agregar-carrito-btn {
   background-color: #003366; /* Azul marino */
   color: #ffffff; /* Texto blanco para mejor contraste */
   border: none; /* Sin bordes visibles */
-  padding: 10px 20px; /* Espaciado interno, ajustable según necesidades */
+  padding: 10px 15px; /* Espaciado interno, ajustable según necesidades */
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px; /* Tamaño de fuente ajustable */
-  border-radius: 10px; /* Bordes redondeados */
+  font-size: 14px; /* Tamaño de fuente moderado */
+  border-radius: 5px; /* Bordes ligeramente redondeados */
   cursor: pointer; /* Cursor indica que es clickeable */
   transition: background-color 0.3s, color 0.3s; /* Transición suave de colores */
 }
 
-.button:hover {
-  background-color: #0051a2; /* Azul más claro para el hover */
-  color: #e0e0e0; /* Texto más claro durante el hover */
+/* Efecto hover para el botón de agregar al carrito */
+.agregar-carrito-btn:hover {
+  background-color: #0051a2; /* Un azul más claro para cuando se pasa el mouse */
+  color: #e0e0e0; /* Un gris claro para el texto durante el hover */
+}
+
+
+/* Estilo base para botones de acción */
+.button {
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilo específico para 'Agregar al carrito' */
+.agregar-carrito {
+  background-color: #003366; /* Azul marino */
+  color: #ffffff; /* Texto blanco para mejor contraste */
+}
+
+.agregar-carrito:hover {
+  background-color: #0051a2; /* Un azul más claro para cuando se pasa el mouse */
+  color: #e0e0e0; /* Un gris claro para el texto durante el hover */
+}
+
+/* Estilo específico para 'Favoritos' */
+.agregar-favoritos {
+  background-color: #ff6347; /* Tomate rojo */
+  color: #ffffff; /* Texto blanco para mejor contraste */
+}
+
+.agregar-favoritos:hover {
+  background-color: #ff8264; /* Rojo más claro para el hover */
+  color: #f0f0f0; /* Casi blanco para el texto durante el hover */
 }
