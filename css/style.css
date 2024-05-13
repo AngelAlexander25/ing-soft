@@ -282,7 +282,7 @@ p {
 
 /** Sección de productos **/
 .productos {
-  background: url(../images/product_bg.jpg);
+  background: url(../images/product_bg.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   padding: 90px 60px;
@@ -641,4 +641,24 @@ p {
 }
 .producto-detalle .detalles {
   max-width: 400px;
+}
+
+/* Estilo para botones azul marino con bordes redondeados */
+.button agregar-carrito-btn {
+  background-color: #003366; /* Azul marino */
+  color: #ffffff; /* Texto blanco para mejor contraste */
+  border: none; /* Sin bordes visibles */
+  padding: 10px 20px; /* Espaciado interno, ajustable según necesidades */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px; /* Tamaño de fuente ajustable */
+  border-radius: 10px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor indica que es clickeable */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave de colores */
+}
+
+.button:hover {
+  background-color: #0051a2; /* Azul más claro para el hover */
+  color: #e0e0e0; /* Texto más claro durante el hover */
 }

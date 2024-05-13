@@ -1,0 +1,112 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header and navigation styles */
+header nav.bar {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+nav.ico a.nav-link {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav.ico a.nav-link:hover {
+    color: #c0c0c0;
+}
+
+.logo-container img.nav-logo {
+    width: 150px;
+    height: auto;
+}
+
+/* Main content and shopping cart styles */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+#itemsCarrito {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.carrito-vacio h1 {
+    color: #888;
+    font-size: 24px;
+}
+
+.btn-ver-productos {
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.btn-ver-productos:hover {
+    background-color: #555;
+}
+
+/* Footer styles */
+footer.pie-pagina {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .box {
+    margin-bottom: 20px;
+}
+
+footer h2 {
+    font-size: 16px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin-right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header nav.bar {
+        flex-direction: column;
+    }
+
+    nav.ico {
+        margin-top: 10px;
+        text-align: center;
+    }
+}

@@ -107,15 +107,3 @@ const productos = [
 ];
 
 export { productos };
-
-function cargarDetallesProducto(idProducto) {
-  // Buscar el producto por su ID en el array de productos
-  const producto = productos.find((producto) => producto.id === idProducto);
-
-  if (!producto) {
-    console.error(`No se encontró ningún producto con el ID ${idProducto}`);
-    return null;
-  }
-
-  return producto;
-}
