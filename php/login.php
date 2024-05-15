@@ -3,7 +3,7 @@ session_start(); // Inicia una nueva sesión o reanuda la existente
 
 $host = "localhost";
 $dbUsername = "id21908626_root";
-$dbPassword = "Alexander1$";
+$dbPassword = "Evo1404**";
 $dbName = "id21908626_vuelos";
 
 $conexion = mysqli_connect($host, $dbUsername, $dbPassword, $dbName);
@@ -14,17 +14,26 @@ if (mysqli_connect_errno()) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = mysqli_real_escape_string($conexion, $_POST['username']);
-    $password = mysqli_real_escape_string($conexion, $_POST['password']); // Considera usar hashing para las contraseñas
+    $password = $_POST['password']; // Recibe la contraseña sin modificar para verificar el hash
 
-    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-    $result = mysqli_query($conexion, $query);
+    // Consulta segura usando preparación de sentencias
+    $query = $conexion->prepare("SELECT clave FROM usuarios WHERE usuario = ?");
+    $query->bind_param("s", $username);
+    $query->execute();
+    $result = $query->get_result();
 
-    if (mysqli_num_rows($result) == 1) {
-        $_SESSION['loggedin'] = true; // Establece la variable de sesión
-        $_SESSION['username'] = $username; // Almacena el nombre de usuario en la sesión
-        header("location: ./index.html"); // Redirige a la página de bienvenida
+    if ($result->num_rows == 1) {
+        $user = $result->fetch_assoc();
+        if (password_verify($password, $user['clave'])) {
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $username;
+            header("location: ../index.html"); // Redirige a la página de bienvenida
+            exit;
+        } else {
+            echo "Contraseña incorrecta.";
+        }
     } else {
-        echo "Usuario o contraseña incorrecta.";
+        echo "Usuario no encontrado.";
     }
 }
 mysqli_close($conexion);

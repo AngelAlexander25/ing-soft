@@ -700,3 +700,16 @@ p {
   background-color: #ff8264; /* Rojo más claro para el hover */
   color: #f0f0f0; /* Casi blanco para el texto durante el hover */
 }
+
+.navigation{
+  display: flex;
+  background: transparent;
+  justify-content: space-between;
+  min-height: 125px;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  transition: background-color 0.3s ease, min-height 0.35s ease;
+  border-radius: 0 0 10px 10px;
+}
