@@ -3,6 +3,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
 
+:root {
+  --font-family-sans-serif: "Raleway", sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
 html,
 body {
   height: 100%;
@@ -28,6 +33,7 @@ body {
 
 /* Contenedor principal */
 .container {
+  font-family: var(--font-family-sans-serif);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,4 +107,84 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.bar a{
+  font-weight: 600;
+  padding-right: 60px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 300ms;
+  margin-right: 20px;
+  border: 1px solid transparent;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+.ico .nav-link:hover,
+.ico .nav-link:focus {
+  text-shadow: #f2c119 5px 5px 15px;
+  transform: scale(2, 2);
+}
+
+.ico .nav-link:hover,
+.ico .nav-link:focus,
+.pagina-inicio .ico .nav-link.inicio,
+.pagina-tienda .ico .nav-link.tienda,
+.pagina-contacto .ico .nav-link.contacto {
+  color: #f2c119; /* Cambia el color del texto para todos los enlaces */
+}
+/* Cambios al hacer scroll en la barra */
+.bar-scrolled {
+  background-color: #183661;
+  min-height: 90px;
+}
+.bar-scrolled .ico .nav-link {
+  color: #f2c119; /* Cambia el color de los enlaces cuando la barra se ha desplazado */
+}
+
+/* Estilos específicos para los enlaces cuando la barra de navegación se ha desplazado hacia abajo */
+.bar-scrolled .ico .nav-link.scrolled {
+  color: #c5c5c5; /* Cambia el color de los enlaces cuando la barra se ha desplazado */
+}
+
+.bar-scrolled .ico .nav-link.scrolled:hover {
+  color: #ffffff; /* Cambia el color de los enlaces cuando la barra se ha desplazado */
+  text-shadow: #ffffff 5px 5px 15px;
+  transform: scale(2, 2);
+}
+/* Encabezado y navegación */
+.bar {
+  font-family: var(--font-family-sans-serif);
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+.nav-logo {
+  height: 175px;
+  width: 175px;
+  display: flex;
+}
+.button.login__submit {
+  background-color: #4DA8DA; /* Color azul claro */
+  color: white; /* Texto en color blanco para un buen contraste */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Espaciado interno para que el botón sea más grande y cómodo */
+  font-size: 16px; /* Tamaño de la fuente */
+  font-weight: bold; /* Negrita para que el texto sea más legible */
+  border-radius: 5px; /* Bordes redondeados suaves */
+  cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Transición suave al cambiar de estado */
+}
+
+.button.login__submit:hover {
+  background-color: #66B2FF; /* Un tono más claro de azul cuando se pasa el mouse por encima */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para un efecto elevado */
 }

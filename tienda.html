@@ -42,6 +42,7 @@
         <div class="content-img">
           <h1>EEVO SNEAKERS</h1>
           <h2>"Camina con estilo: Deja tu huella en cada paso."</h2>
+          <div id="itemsCarrito">Aquí se mostrarán los productos del carrito</div>
           <div class="social-icons">
             <a href="#"><i class="fa fa-instagram"></i></a>
             <a href="#"><i class="fa fa-facebook"></i></a>
@@ -567,47 +568,12 @@
       </div>
     </footer>
     <script src="js/bar.js"></script>
-    <script type="module" src="js/productos.js"></script>
-    <script type="module" src="js/agregarAlCarrito.js"></script>    
-    <script type="module" src="js/producto.js"></script>
+    <script type="module" src="js/agregarAlCarrito.js"></script> 
+    <script type="module" src="js/productos.js"></script>  
+    <script type="module" src="js/producto.js"></script> 
     <script src="js/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const contenedorProductos = document.getElementById('productos');
-
-            // Event delegation para capturar clicks en botones de agregar al carrito
-            contenedorProductos.addEventListener('click', function(event) {
-                if (event.target.classList.contains('agregar-carrito-btn')) {
-                    const idProducto = event.target.getAttribute('data-product-id');
-                    agregarAlCarrito(parseInt(idProducto));
-                }
-            });
-
-            function agregarAlCarrito(idProducto) {
-                console.log(`Producto ${idProducto} agregado al carrito`);
-                // Aquí va la lógica para agregar el producto al carrito, 
-                // como guardar en localStorage, etc.
-            }
-
-            fetch('http://localhost:3000/api/productos')
-                .then(response => response.json())
-                .then(productos => {
-                    productos.forEach(producto => {
-                        const productoHTML = `
-                            <div class="proyecto_box">
-                                <div class="dark_white_bg">
-                                    <img src="${producto.imagen}" alt="${producto.nombre}" />
-                                </div>
-                                <h3>${producto.nombre} - ${producto.descripcion} ${producto.precio}</h3>
-                                <button class="agregar-carrito-btn" data-product-id="${producto.id}">Agregar al Carrito</button>
-                            </div>
-                        `;
-                        contenedorProductos.innerHTML += productoHTML;
-                    });
-                })
-                .catch(error => console.error('Error al cargar los productos:', error));
-        });
-
-    </script>
   </body>
 </html>
+
+
+<!--    <script type="module" src="js/productos.js"></script>-->

@@ -1,27 +1,48 @@
 <?php
-//Se utila require para llamar al archivo que contiene la conexion a la base de datos
-require 'conexion.php';
+session_start();
 
-//Validamos que el formulario y el boton de login han sido presionados
-if(isset($_POST['registro'])){
+$host = "localhost";
+$dbUsername = "id21908626_root"; 
+$dbPassword = "Evo1404**";
+$dbName = "id21908626_vuelos";
 
-    //Obtener los valores enviados al formulario
-    $usuario = $_POST['nombre_user'];
-    $pass = $_POST['pass_user'];
-    $correo = $_POST['correo_user'];
+$conexion = new mysqli($host, $dbUsername, $dbPassword, $dbName);
 
-    //Ejecutamos la consulta a la base de datos utilizando la funcion mysqli_query
-    $sql = "INSERT INTO usuarios (nombre_user, pass_user, correo_user) VALUES ('$usuario', '$pass', '$correo')" ;
-    $resultado = mysqli_query($conexion, $sql);
-        if($resultado){
-            //Inicio de seccion exitoso
-            echo "Se ingresaron los datos de manera correcta!!";
-            header("Location: ../login.html");
-            exit;
-        } else{
-            //Credenciales invalidad
-            echo "No se puedo registrar los datos" . "<br>";
-            echo "Error: " . $sql . "<br>" . mysqli_error($conexion);
-        }
+if ($conexion->connect_error) {
+    die("Conexión fallida: " . $conexion->connect_error);
 }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre_completo = $conexion->real_escape_string($_POST['nombre_completo']);
+    $correo = $conexion->real_escape_string($_POST['correo']);
+    $username = $conexion->real_escape_string($_POST['username']);
+    $password = $conexion->real_escape_string($_POST['password']);
+    $confirm_password = $conexion->real_escape_string($_POST['confirm_password']);
+
+    if ($password !== $confirm_password) {
+        die('Las contraseñas no coinciden.');
+    }
+
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    $checkUserQuery = "SELECT * FROM usuarios WHERE correo = '$correo' OR usuario = '$username'";
+    $checkResult = $conexion->query($checkUserQuery);
+
+    if ($checkResult->num_rows > 0) {
+        die('El correo o usuario ya existe en la base de datos.');
+    }
+
+    $query = "INSERT INTO usuarios (nombre_completo, correo, usuario, clave) VALUES ('$nombre_completo', '$correo', '$username', '$hashed_password')";
+
+    if ($conexion->query($query) === true) {
+        $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $username;
+        header("Location: index.html");
+        exit;
+    } else {
+        echo "Error al registrar el usuario: " . $conexion->error;
+    }
+}
+
+$conexion->close();
 ?>
