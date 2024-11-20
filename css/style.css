@@ -33,7 +33,7 @@ h6 {
   position: relative;
   padding: 0 0 10px 0;
   line-height: normal;
-  color: #000;
+  color: #FFF8DC;
   margin: 0;
 }
 
@@ -56,7 +56,7 @@ html {
   font-family: var(--font-family-sans-serif);
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: #FFF8DC(0, 0, 0, 0);
 }
 
 body {
@@ -95,7 +95,7 @@ p {
 
 /* Cambios al hacer scroll en la barra */
 .bar-scrolled {
-  background-color: #183661;
+  background-color: #FFF8DC;
   min-height: 90px;
 }
 .bar-scrolled .ico .nav-link {
@@ -282,7 +282,7 @@ p {
 
 /** Sección de productos **/
 .productos {
-  background: url(../images/product_bg.png);
+  /**background: url(../images/product_bg.png);**/
   background-size: 100% 100%;
   background-repeat: no-repeat;
   padding: 90px 60px;
@@ -712,4 +712,9 @@ p {
   z-index: 1;
   transition: background-color 0.3s ease, min-height 0.35s ease;
   border-radius: 0 0 10px 10px;
+}
+
+.contact-form i {
+  color: #007bff; /* Color azul */
+  margin-right: 8px; /* Espacio entre ícono y texto */
 }
